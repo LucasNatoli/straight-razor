@@ -1,8 +1,7 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
-  db = require('./db');
-  // ,
-  // router = require('./server/router/index');
+  db = require('./db'),
+  router = require('./router');
 
 const app = express();
 const PORT = 3000; //env.PORT;
@@ -13,7 +12,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//router(app, db);
+router(app, db);
 
 //drop and resync with { force: true }
 db.sequelize.sync().then(() => {
