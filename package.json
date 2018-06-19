@@ -1,0 +1,26 @@
+{
+  "name": "straight-razor",
+  "version": "0.0.1",
+  "description": "Trading aimed microservices",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasNatoli/straight-razor.git"
+  },
+  "keywords": [
+    "trading",
+    "microservices"
+  ],
+  "author": "Lucas Natoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucasNatoli/straight-razor/issues"
+  },
+  "homepage": "https://github.com/LucasNatoli/straight-razor#readme"
+}
