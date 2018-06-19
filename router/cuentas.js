@@ -66,14 +66,12 @@ module.exports = (app, db) => {
           res.status(200).send(result);
         } else {
           res.status(401).send();
-        }
-
+        };
       }, err => {
-        console.log('verify err', err);
-      })
+        res.status(500).send
+      });
     }, err => {
-      console.log('find err:', err);
+      res.status(401).send();
     });
-    //verifyPassword()
   });
 };
