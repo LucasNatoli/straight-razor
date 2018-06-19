@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/LucasNatoli/straight-razor#readme",
   "dependencies": {
+    "credential": "^2.0.0",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
