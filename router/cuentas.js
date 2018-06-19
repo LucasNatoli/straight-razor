@@ -6,6 +6,13 @@ module.exports = (app, db) => {
     var celular = req.body.celular;
     var email = req.body.email;
     var password = req.body.password;
-    res.status(200).send();
+    db.cuentas.create({
+      nombre: nombre,
+      celular: celular,
+      email: email,
+      password: password
+    }).then(cuenta => {
+      res.json(cuenta);
+    });
   });
 };

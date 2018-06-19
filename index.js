@@ -7,10 +7,10 @@ const app = express();
 const PORT = 3000; //env.PORT;
 
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.header('Content-Type', 'application/json');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Content-Type', 'application/json');
+//   next();
+// });
 
 router(app, db);
 
