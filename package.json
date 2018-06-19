@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/LucasNatoli/straight-razor#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.37.10"
   }
 }
