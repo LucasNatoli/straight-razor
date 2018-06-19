@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/LucasNatoli/straight-razor/issues"
   },
-  "homepage": "https://github.com/LucasNatoli/straight-razor#readme"
+  "homepage": "https://github.com/LucasNatoli/straight-razor#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
