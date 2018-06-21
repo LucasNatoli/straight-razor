@@ -4,14 +4,16 @@ const express = require('express'),
   router = require('./router');
 
 const app = express();
-const PORT = 3000; //env.PORT;
+const PORT = process.env.PORT
 
 app.use(bodyParser.json());
 // app.use((req, res, next) => {
 //   res.header('Content-Type', 'application/json');
 //   next();
 // });
-
+app.get('/', (req, res) => {
+  res.send(process.env.PORT)
+})
 router(app, db);
 
 //drop and resync with { force: true }
