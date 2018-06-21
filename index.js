@@ -21,6 +21,6 @@ router(app, db);
 db.sequelize.sync().then(() => {
   console.log('db sync ok');
   app.listen(PORT, () => {
-    console.log('Express listening on port:', PORT);
+    console.log('Raz0r listening on port:', PORT);
   });
 });
