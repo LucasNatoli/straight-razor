@@ -9,7 +9,8 @@ const sequelize = new Sequelize(
         dialect: 'mysql',
         define: {
             underscored: true
-        }
+        },
+        logging: false
     }
 );
 
