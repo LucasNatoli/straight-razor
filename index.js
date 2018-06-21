@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 //   next();
 // });
 app.get('/', (req, res) => {
-  res.send(process.env.PORT)
+  // res.send(process.env.PORT)
+  res.send(process.env.NODE_ENV);
 })
 router(app, db);
 
