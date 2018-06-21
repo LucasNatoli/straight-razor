@@ -1,8 +1,9 @@
+const env = process.env;
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
-    'sequelize_tutorial',
-    'root',
-    'Kalama2018',
+    env.DBNAME,
+    env.DBUSER,
+    env.DBPASSWORD,
     {
         host: 'localhost',
         port: 3306,
@@ -26,5 +27,8 @@ db.favoritos = require('./favoritos')(sequelize, Sequelize);
 
 db.favoritos.belongsTo(db.cuentas);
 db.cuentas.hasMany(db.favoritos);
+
+db.favoritos.belongsTo(db.exchanges);
+db.exchanges.hasMany(db.favoritos);
 
 module.exports = db;

@@ -12,7 +12,7 @@ module.exports = {
         PORT    : 3000,
         DBUSER  : 'root',
         DBPASSWORD: 'Kalama2018',
-        DBNAME: 'sequelize-test',
+        DBNAME: 'razor',
         NODE_ENV: "development"
       },
       env_production : {
