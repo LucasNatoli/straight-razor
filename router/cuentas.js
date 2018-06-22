@@ -59,19 +59,23 @@ module.exports = (app, db) => {
     db.cuentas.find({
       where: {email: email}
     }).then(cuenta => {
-      var storedHash = cuenta.get('password');
-      console.log('stored hash: ', storedHash);
-      verifyPassword(storedHash, password).then(result => {
-        if (result) {
-          res.status(200).send(result);
-        } else {
+      if (cuenta) {
+        var storedHash = cuenta.get('password');
+        console.log('stored hash: ', storedHash);
+        verifyPassword(storedHash, password).then(result => {
+          if (result) {
+            res.status(200).send(result);
+          } else {
+            res.status(401).send();
+          };
+        }, err => {
+          res.status(500).send
+        });
+      } else {
           res.status(401).send();
-        };
-      }, err => {
-        res.status(500).send
-      });
+      }
     }, err => {
-      res.status(401).send();
+      res.status(500).send();
     });
   });
 };
