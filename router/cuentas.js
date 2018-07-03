@@ -1,32 +1,32 @@
 'use strict';
-const credential = require('credential');
+const credential = require('credential')
 
 function hashPassword (password) {
   return new Promise((resolve, reject) => {
-    var pw = credential();
+    var pw = credential()
     pw.hash(password, (err, hash)=>{
 
       if (err) {
-        reject(err);
+        reject(err)
       }else{
-        resolve(hash);
-      };
-    });
-  });
-};
+        resolve(hash)
+      }
+    })
+  })
+}
 
 function verifyPassword(hash, password) {
   return new Promise(function(resolve, reject) {
-    var pw = credential();
+    var pw = credential()
     pw.verify(hash, password, (err, isValid)=>{
       if (err) {
-        reject(err);
+        reject(err)
       }else {
-        resolve(isValid);
+        resolve(isValid)
       }
-    });
-  });
-};
+    })
+  })
+}
 
 module.exports = (app, db) => {
   app.post('/register', (req, res) => {
@@ -42,40 +42,51 @@ module.exports = (app, db) => {
           email: email,
           password: password
         }).then(cuenta => {
-          res.json(cuenta);
-        });
+          res.json(cuenta)
+        })
       },
       (err)=>{
-        console.log(err);
+        console.log(err)
         res.status(500).send
       }
-    );
+    )
 
-  });
+  })
   app.post('/login', (req, res) =>{
     var email = req.body.email;
     var password = req.body.password;
-    console.log('finding cuenta: ', email);
+    console.log('finding cuenta: ', email)
     db.cuentas.find({
       where: {email: email}
     }).then(cuenta => {
       if (cuenta) {
-        var storedHash = cuenta.get('password');
-        console.log('stored hash: ', storedHash);
+        var storedHash = cuenta.get('password')
+        console.log('stored hash: ', storedHash)
         verifyPassword(storedHash, password).then(result => {
           if (result) {
-            res.status(200).send(result);
+            res.status(200).send(result)
           } else {
-            res.status(401).send();
-          };
+            res.status(401).send()
+          }
         }, err => {
+          // No se puedo verificar el hash
           res.status(500).send
-        });
+        })
       } else {
-          res.status(401).send();
+          // No hay coincidencia en la base de datos
+          res.status(401).send()
       }
     }, err => {
-      res.status(500).send();
-    });
-  });
-};
+      // No se pudo hascer la busqueda en la base de datos
+      res.status(500).send()
+    })
+  })
+  app.get('/logout', (req, res) => {
+    var sess = req.sess
+    console.log('sess', sess);
+    if (sess) {
+      sess.destroy()
+    }
+    res.status(200).send()
+  })
+}
