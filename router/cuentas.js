@@ -64,8 +64,13 @@ module.exports = (app, db) => {
         console.log('stored hash: ', storedHash)
         verifyPassword(storedHash, password).then(result => {
           if (result) {
+            var sess = req.session
+            sess.email = email
+            //sess.userid =
+            sess.save
             res.status(200).send(result)
           } else {
+            // No coincide el password
             res.status(401).send()
           }
         }, err => {
@@ -73,7 +78,7 @@ module.exports = (app, db) => {
           res.status(500).send
         })
       } else {
-          // No hay coincidencia en la base de datos
+          // No existe el email en la base de datos
           res.status(401).send()
       }
     }, err => {
@@ -89,4 +94,5 @@ module.exports = (app, db) => {
     }
     res.status(200).send()
   })
+
 }

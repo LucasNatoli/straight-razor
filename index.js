@@ -1,23 +1,24 @@
-const express = require('express'),
-  bodyParser = require('body-parser'),
-  db = require('./db'),
-  router = require('./router'),
-  session = require('express-session')
+const express = require('express')
+const bodyParser = require('body-parser')
+const session = require('express-session')
+const SQLiteStore = require('connect-sqlite3')(session)
 
+const db = require('./db')
+const router = require('./router')
 const app = express()
 const PORT = process.env.PORT
 
-// 
-// var sess = {
-//     secret: 'shhhh',
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {}
-// }
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-//app.use(session(sess))
+
+app.use(session({
+  store: new SQLiteStore({dir: '.sqlite3', db: 'sess.db'}),
+  secret: 'DuM0R4z0r',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 }
+}))
+
 // app.use((req, res, next) => {
 //   res.header('Content-Type', 'application/json');
 //   next();
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.send(process.env.NODE_ENV);
 })
+
 router(app, db)
 
 //drop and resync with { force: true }
