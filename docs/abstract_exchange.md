@@ -1,12 +1,15 @@
-# Abstract methods
+# Exchanges
 
 Interfaz abstracta de los endpoints de un exchange.
 
-## Objeto Account
+* Version: 1
+* Urlbase: api/{version}/
+
+## Account
 
 Representa la cuenta de usuario en cada exchage.
 
-## Objeto Market
+## Market
 
 Contiene los metodos para obtener informacion actual o historica del mercado.
 
@@ -15,7 +18,7 @@ Contiene los metodos para obtener informacion actual o historica del mercado.
 * Obtener el ultimo tick de un instrumento.
 * Obtener iformacion historica de un instrumento.
 
-## Objeto Trades
+## Trades
 
 Contiene los metodos para operar en un mercado.
 

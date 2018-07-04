@@ -7,7 +7,16 @@ Es un set de servicios destinados al analisis de distintos valores de diversos i
 ## User App (web)
 Es una aplicacion web que permite la interacion de los usuarios con los distintos servicios. Desde la aplicacion se pueden programar alertas, ordenes y obtener informacion de los mercados asi como tambien informacion de las cuentas con las que se opera, historial de operaciones, balance y libro de ordenes.
 
-## Servicio de Alertas
+## Servicio de Cuentas (config.)
+Permite la registracion y validación de cuentas de usuarios de los servicios.
+
+### Almacenamiento
+
+|id|nombre|celular|email|password|estado|
+|--|------|-------|-----|--------|------|
+|1 |user  |213-1232|someone@host.com|HASH|0|
+
+## Servicio de Alertas (config.)
 Es un evento que permite que el cliente sea notificado cuando se cumple una condicion en el analisis de de un instrumento en un momento del tiempo.
 
 Cuando la condicion se cumple, el sistema escribe la notificacion de la alerta para que pueda ser leida posteriormente.
@@ -16,22 +25,28 @@ Las alertas se configuran como expresiones binarias que pueden incluir distintos
 valores.
 
 ### Condiciones
-Se compone de 2 terminos y un operador.
+Se compone de 2 términos y un operador.
 
-Terminos:
+#### Terminos:
 
 * El valor de alguna propiedad de una vela: `C, H, L, O`
 * Un indicador: `BB, EMA, MA, RSI, MACD`. Los indicadores se calculan en funcion
 de distintos conjuntos de parametros según el indicador del que se trate.
 * Operaciones Aritmeticas: `suma, resta, multiplicacion y division`
 
-Operadores:
+#### Operadores:
 
 ```javascript
 'lessOrEqual', 'greaterOrEqual', 'equals'
 ```
+### Almacenamiento:
 
-## Servicio Watcher
+|id|exchange|coin|asset|tickInterval|termaA|termB|operator|
+|--|--------|----|-----|------------|------|-----|--------|
+|1 |bittrex |BTC |RDD  |fiveMin     |C     |BB_C_20_2_lower|lessOrEqual|
+
+
+## Servicio Watcher (cron)
 
 Revisa periodicamente una lista de alertas en los distintos exchanges
 La revision incluye la evaluacion de estrategias utilizando datos historicos,
@@ -42,7 +57,7 @@ por el usuario e inicia el analisis de cada una de ellas. Estos analisis
 incluirán generalmente la consulta de informacion a un exchange, el calculo de
 algún indicador o valor y la evaluacion de los terminos obtenidos.
 
-## Servicio de Notificaciones
+## Servicio de Notificaciones (cron)
 
 Revisa periodicamente la lista de notificaciones y las dirige a los suscriptores. Una vez dirigida la notificacion la marca como enviada. Si no se puede enviar la notificacion la marca como invalida para su posterior procesamiento.
 
