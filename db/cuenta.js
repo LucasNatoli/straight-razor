@@ -1,7 +1,7 @@
 'user strict'
 
 module.exports = (sequelize, DataTypes) => {
-    const Cuentas = sequelize.define('cuentas', {
+    const Cuenta = sequelize.define('cuenta', {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -30,5 +30,5 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         paranoid: true
     });
-    return Cuentas;
+    return Cuenta;
 };

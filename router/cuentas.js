@@ -29,6 +29,16 @@ function verifyPassword(hash, password) {
 }
 
 module.exports = (app, db) => {
+  app.post('/checkmail', (req, res) => {
+    var email = req.body.email;
+    // chequear si ya existe el email
+    console.log('finding: ', email);
+    db.cuenta.findOne({where: {email: email}}).then(account => {
+      console.log(account)
+      res.send(account)
+    })
+
+  })
   app.post('/register', (req, res) => {
     var nombre = req.body.nombre;
     var celular = req.body.celular;
@@ -36,13 +46,13 @@ module.exports = (app, db) => {
     hashPassword(req.body.password).then(
       (hash)=>{
         var password = hash;
-        db.cuentas.create({
+        db.cuenta.create({
           nombre: nombre,
           celular: celular,
           email: email,
           password: password
         }).then(cuenta => {
-          res.json(cuenta)
+          res.status(200).end()
         })
       },
       (err)=>{
@@ -56,7 +66,7 @@ module.exports = (app, db) => {
     var email = req.body.email;
     var password = req.body.password;
     console.log('finding cuenta: ', email)
-    db.cuentas.find({
+    db.cuenta.find({
       where: {email: email}
     }).then(cuenta => {
       if (cuenta) {
@@ -66,9 +76,10 @@ module.exports = (app, db) => {
           if (result) {
             var sess = req.session
             sess.email = email
+            sess.nombre = result.nombre
             //sess.userid =
             sess.save
-            res.status(200).send(result)
+            res.status(200).end()
           } else {
             // No coincide el password
             res.status(401).send()

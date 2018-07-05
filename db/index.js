@@ -21,18 +21,22 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
-db.cuentas = require('./cuentas')(sequelize, Sequelize);
-db.exchanges = require('./exchanges')(sequelize, Sequelize);
-//db.favoritos = require('./favoritos')(sequelize, Sequelize);
-db.alertas = require('./alertas')(sequelize, Sequelize);
+db.cuenta = require('./cuenta')(sequelize, Sequelize);
+db.exchange = require('./exchange')(sequelize, Sequelize);
+db.alerta = require('./alerta')(sequelize, Sequelize);
+
+db.alerta.belongsTo(db.cuenta);
+
+db.alerta.belongsTo(db.exchange);
+db.exchange.hasMany(db.alerta);
+
+
+//db.favorito = require('./favorito')(sequelize, Sequelize);
 //
-// db.favoritos.belongsTo(db.cuentas);
-// db.cuentas.hasMany(db.favoritos);
+// db.favorito.belongsTo(db.cuenta);
+// db.cuenta.hasMany(db.favorito);
 
-// db.favoritos.belongsTo(db.exchanges);
-// db.exchanges.hasMany(db.favoritos);
-
-db.alertas.belongsTo(db.exchanges);
-db.exchanges.hasMany(db.alertas);
+// db.favorito.belongsTo(db.exchange);
+// db.exchange.hasMany(db.favorito);
 
 module.exports = db;

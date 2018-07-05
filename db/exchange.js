@@ -1,7 +1,7 @@
 'user strict'
 
 module.exports = (sequelize, DataTypes) => {
-  const Exchanges = sequelize.define('exchanges', {
+  const Exchange = sequelize.define('exchange', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -18,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
   }, {
       paranoid: true
   });
-  return Exchanges;
+  return Exchange;
 };

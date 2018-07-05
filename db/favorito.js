@@ -1,7 +1,7 @@
 'user strict'
 
 module.exports = (sequelize, DataTypes) => {
-    const Favoritos = sequelize.define('favoritos', {
+    const Favorito = sequelize.define('favorito', {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -18,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         paranoid: true
     });
-    return Favoritos;
+    return Favorito;
 };

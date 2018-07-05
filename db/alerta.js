@@ -1,7 +1,7 @@
 'user strict'
 
 module.exports = (sequelize, DataTypes) => {
-    const Alertas = sequelize.define('alertas', {
+    const Alerta = sequelize.define('alerta', {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         nombre: {
             type: DataTypes.STRING,
-            required: true
-        },
-        exchanges_id: {
-            type: DataTypes.INTEGER,
             required: true
         },
         coin: {
@@ -38,9 +34,17 @@ module.exports = (sequelize, DataTypes) => {
         operator: {
             type: DataTypes.ENUM,
             values: ['lessOrEqual', 'greaterOrEqual', 'equals']
+        },
+        exchanges_id: {
+            type: DataTypes.INTEGER,
+            required: true
+        },
+        cuentas_id: {
+            type: DataTypes.UUID,
+            required: true
         }
     }, {
         paranoid: true
     });
-    return Alertas;
+    return Alerta;
 };

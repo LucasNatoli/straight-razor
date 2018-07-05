@@ -14,18 +14,22 @@ Es una aplicacion web que permite la interacion de los usuarios con los distinto
 * Lista de exchanges
 * Lista de instrumentos por exchange
 
-## API requests
-
 Base url: `/api/{version}`
+
+## API Publica
 
 ### Accounts
 Metodos para la creacion y validacion de cuentas de usuario en la aplicacion.
 
 | resource | VERB | Descripcion | Params. |
 | -------- | ---- | ----------- | ------- |
-| register | POST | REgistrar una nueva cuenta | nombre, email, celular, clave |
+| register | POST | Registrar una nueva cuenta | nombre, email, celular, clave |
 | login | POST | Iniciar session en la aplicacion | email, clave |
 | logout | GET | Finalizar session | - |
+
+## API Privada
+
+Los endpoints de la API privadan solo son accesibles a usuarios que hayn iniciado una session en la aplicacion.
 
 ### Exchanges
 
@@ -36,7 +40,9 @@ Metodos para la creacion y validacion de cuentas de usuario en la aplicacion.
 
 ### Alerts
 
-Metodos para la programacion y consulta de alertas
+Metodos para la programacion y consulta de alertas.
+
+`instrument: {base:USD, asset:BTC}`
 
 | resource | VERB | Descripcion | Params. |
 | -------- | ---- | ----------- | ------- |

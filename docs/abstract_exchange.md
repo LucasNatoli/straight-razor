@@ -7,7 +7,12 @@ Interfaz abstracta de los endpoints de un exchange.
 
 ## Account
 
-Representa la cuenta de usuario en cada exchage.
+Metodos para obtener informacion de la cuenta de usuario en cada exchage.
+
+* Vincular un exchange a la cuenta del usuario
+* Obtener informacion de fondos de cada exchange vinculado
+
+
 
 ## Market
 
