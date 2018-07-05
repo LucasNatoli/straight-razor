@@ -26,10 +26,10 @@ db.exchange = require('./exchange')(sequelize, Sequelize);
 db.alerta = require('./alerta')(sequelize, Sequelize);
 
 db.alerta.belongsTo(db.cuenta);
+db.cuenta.hasMany(db.alerta)
 
 db.alerta.belongsTo(db.exchange);
 db.exchange.hasMany(db.alerta);
-
 
 //db.favorito = require('./favorito')(sequelize, Sequelize);
 //
