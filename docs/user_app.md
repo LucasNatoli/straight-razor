@@ -19,10 +19,13 @@ Es una aplicacion web que permite la interacion de los usuarios con los distinto
 Base url: `/api/{version}`
 
 ### Accounts
+Metodos para la creacion y validacion de cuentas de usuario en la aplicacion.
 
 | resource | VERB | Descripcion | Params. |
 | -------- | ---- | ----------- | ------- |
 | register | POST | REgistrar una nueva cuenta | nombre, email, celular, clave |
+| login | POST | Iniciar session en la aplicacion | email, clave |
+| logout | GET | Finalizar session | - |
 
 ### Exchanges
 
