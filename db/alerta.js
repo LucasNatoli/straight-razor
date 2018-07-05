@@ -34,14 +34,6 @@ module.exports = (sequelize, DataTypes) => {
         operator: {
             type: DataTypes.ENUM,
             values: ['lessOrEqual', 'greaterOrEqual', 'equals']
-        },
-        exchanges_id: {
-            type: DataTypes.INTEGER,
-            required: true
-        },
-        cuentas_id: {
-            type: DataTypes.UUID,
-            required: true
         }
     }, {
         paranoid: true

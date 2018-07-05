@@ -21,15 +21,21 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //Models/tables
-db.cuenta = require('./cuenta')(sequelize, Sequelize);
-db.exchange = require('./exchange')(sequelize, Sequelize);
-db.alerta = require('./alerta')(sequelize, Sequelize);
+db.cuenta = require('./cuenta')(sequelize, Sequelize)
+db.exchange = require('./exchange')(sequelize, Sequelize)
+db.alerta = require('./alerta')(sequelize, Sequelize)
+db.exchangeCuenta = require('./exchange_cuenta')(sequelize, Sequelize)
 
-db.alerta.belongsTo(db.cuenta);
+db.alerta.belongsTo(db.cuenta)
 db.cuenta.hasMany(db.alerta)
 
 db.alerta.belongsTo(db.exchange);
 db.exchange.hasMany(db.alerta);
+
+db.exchangeCuenta.belongsTo(db.exchange)
+db.exchangeCuenta.belongsTo(db.cuenta)
+db.exchange.hasMany(db.exchangeCuenta)
+db.cuenta.hasMany(db.exchangeCuenta)
 
 //db.favorito = require('./favorito')(sequelize, Sequelize);
 //
