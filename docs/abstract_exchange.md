@@ -20,8 +20,8 @@ Contiene los metodos para obtener informacion actual o historica del mercado.
 
 * Obtener los mercados disponibles en un exchange.
 * Obtener las monedas disponibles en un mercado.
-* Obtener el ultimo tick de un instrumento.
-* Obtener iformacion historica de un instrumento.
+* GetTicker(coin, assert, tickInterval): Obtener el ultimo tick de un instrumento.
+* GetCandles (coin, assert, tickInterval, count) Obtener iformacion historica de un instrumento.
 
 ## Trades
 

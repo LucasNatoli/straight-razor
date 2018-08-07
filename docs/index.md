@@ -4,6 +4,7 @@
 
 Es un set de servicios destinados al analisis de distintos valores de diversos instrumentos en distintos exchanges que operan en linea.
 
+[Ver Diagramas](https://drive.google.com/open?id=1Lc-omQLR_U7OV328jseIqcQZIrfeaEF7)
 ## User App (web)
 Es una aplicacion web que permite la interacion de los usuarios con los distintos servicios. Desde la aplicacion se pueden programar alertas, ordenes y obtener informacion de los mercados asi como tambien informacion de las cuentas con las que se opera, historial de operaciones, balance y libro de ordenes.
 
@@ -16,7 +17,7 @@ Permite la registracion y validación de cuentas de usuarios de los servicios.
 |--|------|-------|-----|--------|------|
 |1 |user  |213-1232|someone@host.com|HASH|0|
 
-## Servicio de Alertas (config.)
+## Servicio de Alertas - Watchlist
 Es un evento que permite que el cliente sea notificado cuando se cumple una condicion en el analisis de de un instrumento en un momento del tiempo.
 
 Cuando la condicion se cumple, el sistema escribe la notificacion de la alerta para que pueda ser leida posteriormente.
@@ -62,10 +63,21 @@ algún indicador o valor y la evaluacion de los terminos obtenidos.
 Revisa periodicamente la lista de notificaciones y las dirige a los suscriptores. Una vez dirigida la notificacion la marca como enviada. Si no se puede enviar la notificacion la marca como invalida para su posterior procesamiento.
 
 ## Exchanges API docs
+
+* [Abstract](https://github.com/LucasNatoli/straight-razor/blob/master/docs/abstract_exchange.md)
+
+
+Tickers
+* [CoinMarketCap](https://github.com/LucasNatoli/straight-razor/blob/master/docs/coinmarketcap_api.md)
+* [1Forge](https://github.com/LucasNatoli/straight-razor/blob/master/docs/oneforge_api.md)
 * [Oanda](https://github.com/LucasNatoli/straight-razor/blob/master/docs/oanda_api.md)
+
+Enchanges
+
 * [Bittrex](https://github.com/LucasNatoli/straight-razor/blob/master/docs/bittrex_api.md)
 * [Binance](https://github.com/LucasNatoli/straight-razor/blob/master/docs/binance_api.md)
-* [Abstract](https://github.com/LucasNatoli/straight-razor/blob/master/docs/abstract_exchange.md)
+
+[Ver Comparacion](https://docs.google.com/spreadsheets/d/1ITFFnI5ue10GVF7FgK5gAuqFR-ijYUdYIsAl9-yEHZY/edit?usp=sharing)
 
 ## Detalles técnicos
 

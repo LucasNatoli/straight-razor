@@ -1,6 +1,6 @@
 # Tickers
 
-Se consideran tickers a los servicios web que informan el precio actual de un instrumento junto con otra informacion de relevancia.
+Informacion provista por servicios web que informan el precio actual de un instrumento junto a otra informacion de relevancia.
 
 Dada la necesidad actual de operar en mercados cripto y forex se consideran 2 Tickers inicialmente.
 
