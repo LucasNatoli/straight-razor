@@ -5,7 +5,7 @@ module.exports = {
    */
   apps : [{
       name      : 'web-server',
-      script    : './index.js',
+      script    : './web-server.js',
       watch     : true,
       ignore_watch : ["node_modules", "docs", ".sqlite3", ".git", "test"],
       instance_var: 'INSTANCE_ID',
