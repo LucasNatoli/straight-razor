@@ -20,6 +20,7 @@ const db = new sequelize(
 )
 const binance_tick = require('./binance_tick')(db, sequelize)
 const binance_candle = require('./binance_candle')(db, sequelize)
+const binance_symbol = require('./binance_symbol')(db, sequelize)
 const baseEndpoint = "https://api.binance.com" 
 
 function Binance(){
@@ -90,7 +91,27 @@ Binance.prototype.getExchangeInfo = function () {
   .then(
     (res) => {
       if (res.status===200) {
-        console.log(res.data)
+        let symbols = res.data.symbols
+        for (var i=0; i<symbols.length; i++) {
+          let s = symbols[i]
+          binance_symbol.findOrCreate({
+            where: {
+              symbol: s.symbol
+            },
+            defaults: {
+              symbol: s.symbol,
+              baseAsset: s.baseAsset,
+              baseAssetPrecision: s.baseAssetPrecision,
+              quoteAsset: s.quoteAsset,
+              quoteAssetPrecision: s.quoteAssetPrecision
+            }
+          })
+          .spread((symbol, created)=>{
+            if(created){
+              console.log('symbol creado:', symbol.get({plain: true}))
+            }
+          })
+        }
       }
     },
     (err) => {
