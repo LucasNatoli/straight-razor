@@ -1,8 +1,9 @@
 'use strict'
 
 const routes = [
-  require('./favoritos'),
-  require('./cuentas')
+  require('./alertas'),
+  require('./cuentas'),
+  require('./binance')
 ];
 
 // Add access to the app and db objects to each route
