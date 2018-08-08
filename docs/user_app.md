@@ -5,13 +5,14 @@ Es una aplicacion web que permite la interacion de los usuarios con los distinto
 ## UI Elements
 
 * Home
-* Boton agregar alerta
-* Boton agregar exchange
-* Boton agregar instrumento
+* Indicador de carga
 * Formulario de registracion de usuarios
+* Encabezado con titulo y botones de adicion y actualizacion
+* Contenedor de alertas
+* Plantilla de alerta
 * Editor de alertas
-* Listado de Alertas
 * Lista de exchanges
+* Dialogo para agregar nuevas API keys
 * Lista de instrumentos por exchange
 
 Base url: `/api/{version}`
@@ -37,6 +38,11 @@ Los endpoints de la API privadan solo son accesibles a usuarios que hayn iniciad
 | -------- | ---- | ----------- | ------- |
 | exchanges| GET  | Listar los exchanges disponibles en el sistema | - |
 | exchanges/register| POST | Registrar informacion de cuenta de un exchange | `TODO` |
+
+#### Binance
+| resource | VERB | Descripcion | Params. |
+| -------- | ---- | ----------- | ------- |
+| binance/open-orders | GET  | Listar todas las ordenes abiertas | - |
 
 ### Alerts
 
