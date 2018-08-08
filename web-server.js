@@ -23,9 +23,8 @@ app.use(session({
 //   res.header('Content-Type', 'application/json');
 //   next();
 // });
-app.get('/', (req, res) => {
-  res.send(process.env.NODE_ENV);
-})
+
+app.use(express.static('pwa'));
 
 router(app, db)
 

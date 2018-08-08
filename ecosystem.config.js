@@ -7,7 +7,7 @@ module.exports = {
       name      : 'web-server',
       script    : './web-server.js',
       watch     : true,
-      ignore_watch : ["node_modules", "docs", ".sqlite3", ".git", "test"],
+      ignore_watch : ["node_modules", "docs", ".sqlite3", ".git", "test", "pwa"],
       instance_var: 'INSTANCE_ID',
       env: {
         PORT    : 3000,
