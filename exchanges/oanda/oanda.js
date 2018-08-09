@@ -134,7 +134,7 @@ const updateAPiKey = function (apiKey) {
     })
     .spread((key, created)=>{
       if (created) {
-        console.log('api ket agregada')      
+        console.log('api key agregada')      
       }else {
         console.log('api ya existente')        
       }
