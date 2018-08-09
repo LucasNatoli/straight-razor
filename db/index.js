@@ -26,6 +26,16 @@ db.exchange = require('./exchange')(sequelize, Sequelize)
 db.alerta = require('./alerta')(sequelize, Sequelize)
 db.exchangeCuenta = require('./exchange_cuenta')(sequelize, Sequelize)
 
+// Binance
+db.binance_candle = require('./binance_candle')(sequelize, Sequelize)
+db.binance_symbol = require('./binance_symbol')(sequelize, Sequelize)
+db.binance_tick = require('./binance_tick')(sequelize, Sequelize)
+
+// Oanda
+db.oanda_account = require('./oanda_account')
+db.oanda_instrument = require('./oanda_instrument')
+db.oanda_api_key = require('./oanda_api_key')
+
 db.alerta.belongsTo(db.cuenta)
 db.cuenta.hasMany(db.alerta)
 

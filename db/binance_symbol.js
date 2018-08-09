@@ -17,7 +17,7 @@ module.exports = (dbInstance, DataTypes) => {
       type: DataTypes.STRING,
       required: true
     },
-    quotePrecision: {
+    quoteAssetPrecision: { //TODO: rename to quotePrecision!!
       type: DataTypes.INTEGER
     }
   }, {
