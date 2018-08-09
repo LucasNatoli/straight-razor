@@ -79,7 +79,7 @@ html, body {
   margin-right: 32px;
 }
 
-.demo-content {
+.app-content {
   max-width: 1080px;
 }
 
@@ -98,7 +98,7 @@ html, body {
 .demo-chart:nth-child(4) {
   color: #EF3C79;
 }
-.demo-graphs {
+.home-suscripciones {
   padding: 16px 32px;
   display: flex;
   flex-direction: column;
@@ -108,7 +108,7 @@ html, body {
  * not float around outside their container in IE10/11.
  * Using a browserhacks.com solution for now.
  */
-_:-ms-input-placeholder, :root .demo-graphs {
+_:-ms-input-placeholder, :root .home-suscripciones {
   min-height: 664px;
 }
 _:-ms-input-placeholder, :root .demo-graph {
@@ -172,4 +172,8 @@ _:-ms-input-placeholder, :root .demo-graph {
   display: flex;
   box-sizing: border-box;
   align-items: center;
+}
+
+.hide {
+  display: none
 }

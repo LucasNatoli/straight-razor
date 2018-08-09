@@ -49,8 +49,14 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
     <link rel="stylesheet" href="styles.css">
     <style>
-    .hide {
-      display: none
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
     }
     </style>
   </head>
@@ -81,13 +87,12 @@
         </div>
       </header>
 
-      <!-- Drawer -->
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50 hide" id="app_drawer">
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
           <img src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>hello@example.com</span>
-            <div class="mdl-layout-spacer"></div>
+<!--             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
               <span class="visuallyhidden">Accounts</span>
@@ -96,7 +101,7 @@
               <li class="mdl-menu__item">hello@example.com</li>
               <li class="mdl-menu__item">info@example.com</li>
               <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-            </ul>
+            </ul> -->
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -106,42 +111,10 @@
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
       </div>
-      
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
 
-          <!-- Login Dialog -->
-          <div  class="mdl-grid" id="app_login_dialog">
-            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--1-col"></div>
-            <div class="mdl-cell">
-              <div class="mdl-card mdl-shadow--6dp" style="width: 310px">
-                <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                  <h2 class="mdl-card__title-text">Ingreso</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                  <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                      <input class="mdl-textfield__input" type="text" id="email" />
-                      <label class="mdl-textfield__label" for="email">Email</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield">
-                      <input class="mdl-textfield__input" type="password" id="userpass" />
-                      <label class="mdl-textfield__label" for="userpass">Password</label>
-                    </div>
-                  </form>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                  <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="app_login_btn">Enviar</button>
-                </div>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--3-col-desktop"></div>
-          </div>
-          
-
-
-
-<!--           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <svg fill="currentColor" width="150px" height="150px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
               <text x="0.5" y="0.1" font-family="Roboto" font-size="0.15" fill="#888" text-anchor="middle" dy="0.1">Temp °</text>           
               <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">14<tspan font-size="0.2" dy="-0.07">01</tspan></text>
@@ -158,7 +131,7 @@
               <text x="0.5" y="0.1" font-family="Roboto" font-size="0.15" fill="#888" text-anchor="middle" dy="0.1">Temp Ext °</text>           
               <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">16<tspan dy="-0.07" font-size="0.2">24</tspan></text>            
             </svg>
-          </div> -->
+          </div>
 
 <!-- 
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -181,18 +154,16 @@
           </div>
 
  -->
-
-
- <!--          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
               <use xlink:href="#chart" />
             </svg>
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
               <use xlink:href="#chart" />
             </svg>
-          </div> -->
+          </div>
           
-          <!-- 
+          
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
 
             <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
@@ -241,11 +212,11 @@
             </div>
 
 
-          </div> -->
+          </div>
         </div>
       </main>
     </div>
-<!-- 
+
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
           <mask id="piemask" maskContentUnits="objectBoundingBox">
@@ -292,8 +263,7 @@
             </g>
           </g>
         </defs>
-      </svg> -->
+      </svg>
       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-      <script defer src="app.js"></script>      
   </body>
 </html>
