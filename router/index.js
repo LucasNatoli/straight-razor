@@ -3,7 +3,8 @@
 const routes = [
   require('./alertas'),
   require('./cuentas'),
-  require('./binance')
+  require('./binance'),
+  require('./config')
 ];
 
 // Add access to the app and db objects to each route

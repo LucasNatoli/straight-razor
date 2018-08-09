@@ -14,4 +14,10 @@ module.exports = (app, db) => {
       console.log("openOrders()", openOrders);
     })
   })
+  app.get('/binance/symbols', (releaseEvents, res) => {
+    db.binance_symbol.findAll()
+    .then(alertas => {
+      res.json(alertas)
+    })
+  })
 }
