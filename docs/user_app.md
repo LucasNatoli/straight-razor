@@ -54,3 +54,8 @@ Metodos para la programacion y consulta de alertas.
 | -------- | ---- | ----------- | ------- |
 | alerts   | POST | Agregar alerta | exchange, instrument, tickInterval, termA, termB, operator |
 | alerts   | GET | Listar una o más alertas | exchange, instrument, tickInterval, termA, termB, operator |
+
+## app.js
+
+Informacion almacenada
+
