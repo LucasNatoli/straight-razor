@@ -1,8 +1,8 @@
 'use strict'
 
 const binance = require('node-binance-api')().options({
-  APIKEY: 'op3aC9FMVNntfbmLeG95qdLuXAcBuzGAdnzwRfx49VasESp39SAn8RUzCWAYoeW0',
-  APISECRET: 'oE51S3EhKSwpBRPUysYEXloncza7KwSyTtriFOhJGoO3MNFBC7IJEtnfwCXGDejG',
+  APIKEY: 'zzzzzz',
+  APISECRET: 'zz',
   useServerTime: true, // If you get timestamp errors, synchronize to server time at startup
   test: true // If you want to use sandbox mode where orders are simulated
 })
