@@ -13,4 +13,11 @@ module.exports = (app, db) => {
       }
     ]);
   });
+  app.get('/config/ping', (req, res) => {
+    res.json([
+      {
+        pong: (new Date).getTime()
+      }
+    ])
+  })
 };
