@@ -98,6 +98,7 @@ module.exports = (app, db) => {
 
 
   })
+
   app.post('/login', (req, res) =>{
     var email = req.body.email;
     var password = req.body.password;
@@ -136,13 +137,23 @@ module.exports = (app, db) => {
       }
     )
   })
+
   app.get('/logout', (req, res) => {
-    var sess = req.sess
-    console.log('sess', sess);
-    if (sess) {
-      sess.destroy()
-    }
+    req.session = null
     res.status(200).send()
   })
 
+  app.get('/check-session', (req, res) => {
+    
+    var sess = req.session
+    if (sess.email) {   
+      res.status(200).send([
+        {
+          serverTime: (new Date).getTime()
+        }
+      ])      
+    } else {
+      res.status(401).send()
+    }
+  })
 }
