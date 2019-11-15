@@ -1,7 +1,7 @@
 'user strict'
 
 module.exports = (sequelize, DataTypes) => {
-    const Alerta = sequelize.define('alerta', {
+    const Alarm = sequelize.define('alarm', {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
@@ -38,5 +38,5 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         paranoid: true
     });
-    return Alerta;
+    return Alarm;
 };
