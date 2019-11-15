@@ -1,7 +1,7 @@
 'use strict'
 
 const routes = [
-  require('./alertas'),
+  require('./alarms'),
   require('./cuentas'),
   require('./binance'),
   require('./config')

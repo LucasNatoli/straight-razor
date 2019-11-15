@@ -1,0 +1,20 @@
+{
+  "exchanges": [
+    {"Binance": {
+      "markets": [
+        {"name": "BTC"},
+        {"name": "BNB"},
+        {"name": "ETH"},
+        {"name": "USDT"}
+      ]
+    }},
+    {"Bittrex": {
+      "markets": [
+        {"name": "BTC"},
+        {"name": "ETH"},
+        {"name": "USDT"}
+      ]      
+    }},
+    {"Oanda": {}}
+  ]
+}
