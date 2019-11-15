@@ -2,16 +2,18 @@
 
 Informacion provista por servicios web que informan el precio actual de un instrumento junto a otra informacion de relevancia.
 
+Cada ticker actualiza su infomacion mediante crons programados para ejecutarse cada un lapso de tiempo configurable. 
+
+Opciones de configuracion
+
+* 5min, 1hour, 4hour, 12hour, 1day, week, month
+* Ranking limit
+
 Dada la necesidad actual de operar en mercados cripto y forex se consideran 2 Tickers inicialmente.
 
 * (criptomarketcap.com) https://coinmarketcap.com/es/api/
 * (Forex) pendiente
 
-El servicio de tickers se encarga de consultar y almacenar periodicamente cada Ticker.
-
-* Tiempo entre consulta a los Tickers
-* Granularidad/es de la informacion almacenada
-* Ranking limit
 
 
 ## Cripto - Coinmarketcap
