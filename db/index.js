@@ -1,9 +1,9 @@
 const env = process.env;
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
-    env.DBNAME,
-    env.DBUSER,
-    env.DBPASSWORD,
+    env.DB_NAME,
+    env.DB_USER,
+    env.DB_PASSWORD,
     {
         host: 'localhost',
         port: 3306,

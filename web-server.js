@@ -6,7 +6,7 @@ const SQLiteStore = require('connect-sqlite3')(session)
 const db = require('./db')
 const router = require('./router')
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.RAZOR_PORT
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

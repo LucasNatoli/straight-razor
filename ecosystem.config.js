@@ -11,9 +11,9 @@ module.exports = {
       instance_var: 'INSTANCE_ID',
       env: {
         PORT    : 3000,
-        DBUSER  : 'root',
-        DBPASSWORD: 'Kalama2018',
-        DBNAME: 'razor',
+        DB_USER  : 'root',
+        DB_PASSWORD: 'Kalama2018',
+        DB_NAME: 'razor',
         NODE_ENV: "development"
       },
       env_production : {
