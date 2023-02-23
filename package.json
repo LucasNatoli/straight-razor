@@ -33,7 +33,7 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "node-binance-api": "^0.8.1",
-    "sequelize": "^5.15.1",
+    "sequelize": "^6.28.2",
     "sqlite3": "^4.0.2"
   }
 }
