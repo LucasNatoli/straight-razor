@@ -16,8 +16,8 @@ module.exports = (app, db) => {
   })
   app.get('/binance/symbols', (releaseEvents, res) => {
     db.binance_symbol.findAll()
-    .then(alertas => {
-      res.json(alertas)
-    })
+      .then(alertas => {
+        res.json(alertas)
+      })
   })
 }
