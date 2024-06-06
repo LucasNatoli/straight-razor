@@ -31,7 +31,7 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "mysql": "^2.15.0",
-    "mysql2": "^1.5.3",
+    "mysql2": "^3.9.8",
     "node-binance-api": "^0.8.1",
     "sequelize": "^6.29.0",
     "sqlite3": "^4.0.2"
